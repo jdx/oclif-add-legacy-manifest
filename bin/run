@@ -14,5 +14,16 @@ if (!pjson.files.includes('.oclif.manifest.json')) {
 }
 pjson.scripts.prepublishOnly = 'oclif-dev manifest'
 pjson.scripts.postpublish = 'rm .oclif.manifest.json'
+pjson.oclif = pjson.oclif || {}
+pjson.oclif.topics = {}
+
+let m = require(qq.cwd())
+if (m.topic) m.topics = [m.topic]
+if (m.topics) {
+  for (let topic of m.topics) {
+    pjson.oclif.topics[topic.name] = {description: topic.description}
+    if (topic.hidden) pjson.oclif.topics[topic.name] = true
+  }
+}
 
 qq.writeJSON([qq.cwd(), 'package.json'], pjson, {indent: '  '})

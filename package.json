@@ -1,6 +1,6 @@
 {
   "name": "oclif-add-legacy-manifest",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Jeff Dickey",
   "bin": {
     "oclif-add-legacy-manifest": "bin/run"

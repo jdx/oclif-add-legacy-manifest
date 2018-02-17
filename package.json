@@ -2,7 +2,9 @@
   "name": "oclif-add-legacy-manifest",
   "version": "1.0.1",
   "author": "Jeff Dickey",
-  "bin": "bin/run",
+  "bin": {
+    "oclif-add-legacy-manifest": "bin/run"
+  },
   "dependencies": {
     "qqjs": "^0.0.2"
   },

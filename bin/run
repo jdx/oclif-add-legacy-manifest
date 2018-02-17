@@ -4,6 +4,15 @@ const qq = require('qqjs')
 
 let pjson = qq.readJSON([qq.cwd(), 'package.json'])
 pjson.scripts = pjson.scripts || []
+if (pjson.name.match(/^heroku-/)) {
+  pjson.name = pjson.name.replace('heroku', '@heroku-cli/plugin')
+}
 
+qq.x('yarn add -D @oclif/dev-cli @oclif/plugin-legacy')
+if (!pjson.files.includes('.oclif.manifest.json')) {
+  pjson.files.unshift('.oclif.manifest.json')
+}
 pjson.scripts.prepublishOnly = 'oclif-dev manifest'
-console.dir(pjson.scripts)
+pjson.scripts.postpublish = 'rm .oclif.manifest.json'
+
+qq.writeJSON([qq.cwd(), 'package.json'], pjson, {indent: '  '})

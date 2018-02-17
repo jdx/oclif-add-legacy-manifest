@@ -22,7 +22,7 @@ if (m.topic) m.topics = [m.topic]
 if (m.topics) {
   for (let topic of m.topics) {
     pjson.oclif.topics[topic.name] = {description: topic.description}
-    if (topic.hidden) pjson.oclif.topics[topic.name] = true
+    if (topic.hidden) pjson.oclif.topics[topic.name].hidden = true
   }
 }
 

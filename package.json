@@ -9,6 +9,5 @@
   "files": [
     "bin"
   ],
-  "license": "MIT",
-  "main": "index.js"
+  "license": "MIT"
 }

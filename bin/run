@@ -6,3 +6,4 @@ let pjson = qq.readJSON([qq.cwd(), 'package.json'])
 pjson.scripts = pjson.scripts || []
 
 pjson.scripts.prepublishOnly = 'oclif-dev manifest'
+console.dir(pjson.scripts)

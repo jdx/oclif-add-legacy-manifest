@@ -1,0 +1,14 @@
+{
+  "name": "oclif-add-legacy-manifest",
+  "version": "1.0.0",
+  "author": "Jeff Dickey",
+  "bin": "bin/run",
+  "dependencies": {
+    "qqjs": "^0.0.2"
+  },
+  "files": [
+    "bin"
+  ],
+  "license": "MIT",
+  "main": "index.js"
+}
